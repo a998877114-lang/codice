@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Tutti i contatti presenti in rubrica</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        table, th, td {
+          border: 1px solid blue; border-collapse: collapse;
+        }
+        th, td {
+          padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Telefono</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contact : ${all}">
+        <td th:text="${contact.id}">Id</td>
+        <td th:text="${contact.firstName}">Nome</td>
+        <td th:text="${contact.lastName}">Cognome</td>
+        <td th:text="${contact.phone}">Telefono</td>
+        <td th:text="${contact.email}">Email</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
